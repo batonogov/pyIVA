@@ -9,6 +9,3 @@ class Chats:
 class Conferences:
     pass
 
-class Users:
-    pass
-
