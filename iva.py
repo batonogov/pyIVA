@@ -17,4 +17,10 @@ with open('pyIVA/__init__.py', 'w') as f:
 
 buttons = [' '.join(c) for c in items if not c[0].isupper()]
 
+for i in driver.find_elements(By.CLASS_NAME, 'sc-fznNvL'):
+    if i.text in buttons:
+        i.click()
+        time.sleep(1)
+
+
 driver.quit()
