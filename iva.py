@@ -12,4 +12,8 @@ with open('pyIVA/__init__.py', 'w') as f:
     f.write("__version__ = '0.0.1'\n\n")
     [f.write(f"class {c.title()}:\n    pass\n\n") for c in [' '.join(c).replace(' ', '_') for c in [c.text.split() for c in driver.find_elements(By.TAG_NAME, 'h1')][1:]]]
 
+cmd_def = [i.text.replace(' ', '_') for i in driver.find_elements(By.TAG_NAME, 'h2')]
+print(cmd_def)   
+
+
 driver.quit()
