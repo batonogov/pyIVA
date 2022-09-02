@@ -27,7 +27,6 @@ for i in href:
     if i[0:9] == 'operation' and i not in z:
         z.append(i)
 for i in z:
-    print(i)
     try:
         print(driver.find_element(By.ID, f"{i}").text)
     except:
