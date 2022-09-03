@@ -421,3 +421,169 @@ class Conference_Statistics:
     def Get_User_Participation_Statistics_Slice():
         pass
 
+class User_Session:
+    def Get_User_Session_Information():
+        pass
+
+    def Login():
+        pass
+
+    def Login_With_Token():
+        pass
+
+    def Login_As_Guest():
+        pass
+
+    def Logout():
+        pass
+
+class Profile:
+    def Get_Password_Recovery_Info():
+        pass
+
+    def Get_Profile_Info():
+        pass
+
+    def Update_Profile():
+        pass
+
+    def Request_Password_Recovery():
+        pass
+
+    def Update_Password():
+        pass
+
+    def Update_Password_During_Recovery():
+        pass
+
+class Interlocutors:
+    def Get_Interlocutor_By_Contact():
+        pass
+
+    def Get_Interlocutor_By_Ldap_User():
+        pass
+
+    def Get_Interlocutor_By_Profile():
+        pass
+
+    def Find_Interlocutors():
+        pass
+
+    def Get_Available_Interlocutors_Types():
+        pass
+
+class Contacts:
+    def Create_Note_Contact():
+        pass
+
+    def Get_Contacts_Changes():
+        pass
+
+    def Get_Contacts():
+        pass
+
+    def Get_Contacts_Presences():
+        pass
+
+    def Get_Contact_Invitations():
+        pass
+
+    def Get_User_Tags():
+        pass
+
+    def Get_Profiles_Presences():
+        pass
+
+    def Invite_To_Contacts():
+        pass
+
+    def Reject_Contact_Invitations():
+        pass
+
+    def Remove_Contact():
+        pass
+
+    def Update_Contact():
+        pass
+
+    def Remove_Contacts():
+        pass
+
+class File_Resources:
+    def Create_Resource():
+        pass
+
+    def Download_File():
+        pass
+
+    def Upload_File():
+        pass
+
+class System:
+    def Confirm_Delayed_Sms():
+        pass
+
+    def Get_System_Broadcast_Notification():
+        pass
+
+    def Get_System_Information():
+        pass
+
+    def Get_System_Media_Information():
+        pass
+
+    def Send_App_Crash_Report():
+        pass
+
+    def Send_EMail_To_Support():
+        pass
+
+class Client_Applications:
+    def Get_Client_Applications():
+        pass
+
+class Events_Subscription:
+    def Subscribe_To_Event_Channel():
+        pass
+
+class Chat_Events:
+    def Chat_Call_Events():
+        pass
+
+    def Chat_Events():
+        pass
+
+class Conference_Events:
+    def Common_Events():
+        pass
+
+    def Invitation_Events():
+        pass
+
+class Active_Conference_Events:
+    def Chat_Events():
+        pass
+
+    def Common_Events():
+        pass
+
+    def Media_Events():
+        pass
+
+    def Participants_Events():
+        pass
+
+    def Presentation_Events():
+        pass
+
+    def Resource_Events():
+        pass
+
+class Profile_Events:
+    def Profile_Events():
+        pass
+
+class Contact_Events:
+    def Contact_Events():
+        pass
+
