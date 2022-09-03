@@ -11,27 +11,29 @@ driver.get('https://vcs.domrf.ru/doc/api/rest.html')
 
 with open('pyIVA/__init__.py', 'w') as f:
     f.write("__version__ = '0.0.1'\n\n")
-#     [f.write(f"class {c.title()}:\n    pass\n\n") for c in [' '.join(c).replace(' ', '_') for c in [c.text.split() for c in driver.find_elements(By.TAG_NAME, 'h1')][1:]]]
-
+    [f.write(f"class {c.title()}:\n    pass\n\n") for c in [' '.join(c).replace(' ', '_') for c in [c.text.split() for c in driver.find_elements(By.TAG_NAME, 'h1')][1:5]]]
+    [f.write(f"class {c.title()}:\n ") for c in [''.join(c) for c in [c.text.split() for c in driver.find_elements(By.TAG_NAME, 'h1')][5]]]
+    [f.write(    f"def {i.title()}:\n    pass\n\n") for i in [' '.join(c) for c in [c.text.split() for c in driver.find_elements(By.TAG_NAME, 'h2')][6:36]]]
 # cmd_def = [i.text.replace(' ', '_') for i in driver.find_elements(By.TAG_NAME, 'h2')]
 # print(cmd_def)   
 
 # h1 = [' '.join(c) for c in [c.text.split() for c in driver.find_elements(By.TAG_NAME, 'h1')][1:]]
-# h2 = [' '.join(c) for c in [c.text.split() for c in driver.find_elements(By.TAG_NAME, 'h2')]]
+# h2 = [' '.join(c) for c in [c.text.split() for c in driver.find_elements(By.TAG_NAME, 'h2')][6:36]] # CHAT
+# print(h2)
 
-href = [str(i.get_attribute('href'))[39:] for i in driver.find_elements(By.TAG_NAME, "a")]
-z = []
-for i in href:
-    if i[0:9] == 'operation' and i not in z:
-        z.append(i)
-with open('pyIVA/raw.py', 'w') as f:
-    for i in z:
-        try:
-            data = driver.find_element(By.ID, f"{i}").text
-            f.write(f"{data}\n\n")
-            print(data)
-        except:
-            pass
+# href = [str(i.get_attribute('href'))[39:] for i in driver.find_elements(By.TAG_NAME, "a")]
+# z = []
+# for i in href:
+#     if i[0:9] == 'operation' and i not in z:
+#         z.append(i)
+# with open('pyIVA/raw.py', 'w') as f:
+#     for i in z:
+#         try:
+#             data = driver.find_element(By.ID, f"{i}").text
+#             f.write(f"{data}\n\n")
+#             print(data)
+#         except:
+#             pass
 
 # for i in driver.find_elements(By.TAG_NAME, 'h1'):
 #     if i.text in button:
