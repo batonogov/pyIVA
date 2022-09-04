@@ -1,16 +1,16 @@
+'''Собираю данные api и создаю файл на основани этих данных'''
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-import time
 
 
 # driver = webdriver.Chrome(executable_path=r'C:\\Users\\nerv_\\Downloads\\chromedriver_win32\\chromedriver.exe')
-driver = webdriver.Chrome()
-driver.get('https://vcs.domrf.ru/doc/api/rest.html')
 
-h1 = [c.text.split() for c in driver.find_elements(By.TAG_NAME, 'h1')]
-h2 = [c.text.split() for c in driver.find_elements(By.TAG_NAME, 'h2')]
+with webdriver.Chrome() as driver:
+    driver.get('https://vcs.domrf.ru/doc/api/rest.html')
+    h1 = [c.text.split() for c in driver.find_elements(By.TAG_NAME, 'h1')]
+    h2 = [c.text.split() for c in driver.find_elements(By.TAG_NAME, 'h2')]
 
-with open('pyIVA/__init__.py', 'w', encoding='utf-8') as f:
+with open('pyIVA/__init__.py', 'w') as f:
     f.write("__version__ = '0.0.1'\n\n")
     [f.write(f"class {c.title()}:\n    pass\n\n") for c in [' '.join(c).replace(' ', '_') for c in h1[1:5]]]
     [f.write(f"class {c.title()}:\n") for c in [''.join(c) for c in h1[5]]]
@@ -87,5 +87,3 @@ with open('pyIVA/__init__.py', 'w', encoding='utf-8') as f:
 #         for c in driver.find_elements(By.CLASS_NAME, 'dbpfvr'):
 #             print([' '.join(c) for c in [c.text.split()]])
 #         print(i.text)
-
-driver.quit()
