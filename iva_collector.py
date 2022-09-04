@@ -10,9 +10,9 @@ with webdriver.Chrome() as driver:
     h1 = [c.text.split() for c in driver.find_elements(By.TAG_NAME, 'h1')]
     h2 = [c.text.split() for c in driver.find_elements(By.TAG_NAME, 'h2')]
 
-with open('pyIVA/__init__.py', 'w') as f:
+with open('pyIVA/__init__.py', 'w', encoding='utf-8') as f:
     f.write("__version__ = '0.0.1'\n\n")
-    [f.write(f"class {c.title()}:\n    pass\n\n") for c in [' '.join(c).replace(' ', '_') for c in h1[1:5]]]
+    [f.write(f"class {c.title()}:\n    pass\n\n") for c in [' '.join(c).replace(' ', '') for c in h1[1:5]]]
     [f.write(f"class {c.title()}:\n") for c in [''.join(c) for c in h1[5]]]
     [f.write(f"    def {i.title().replace(' ', '_').replace('/', '_')}():\n        pass\n\n") for i in [' '.join(c) for c in h2[6:36]]]
     [f.write(f"class {c.title()}:\n") for c in ['_'.join(c) for c in h1[6:7]]]
