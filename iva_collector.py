@@ -1,6 +1,7 @@
 '''Собираю данные api и создаю файл на основани этих данных'''
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from tqdm import tqdm
 
 
 # driver = webdriver.Chrome(executable_path=r'C:\\Users\\nerv_\\Downloads\\chromedriver_win32\\chromedriver.exe')
@@ -12,11 +13,11 @@ with webdriver.Chrome() as driver:
 
     href = [str(i.get_attribute('href'))[39:] for i in driver.find_elements(By.TAG_NAME, "a")]
     z = []
-    for i in href:
+    for i in tqdm(href):
         if i[0:9] == 'operation' and i not in z:
             z.append(i)
 
-    for i in [' '.join(c) for c in h2[6:36]]:
+    for i in tqdm([' '.join(c) for c in h2[6:36]]):
         if i == [i.text.split('\n') for i in driver.find_elements(By.ID, f"{z[0]}")][0][0:1][0]:
             driver.quit()
             print("найден")
