@@ -586,4 +586,3 @@ class Profile_Events:
 class Contact_Events:
     def Contact_Events():
         pass
-

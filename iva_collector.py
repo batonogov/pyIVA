@@ -10,7 +10,7 @@ driver.get('https://vcs.domrf.ru/doc/api/rest.html')
 h1 = [c.text.split() for c in driver.find_elements(By.TAG_NAME, 'h1')]
 h2 = [c.text.split() for c in driver.find_elements(By.TAG_NAME, 'h2')]
 
-with open('pyIVA/__init__.py', 'w') as f:
+with open('pyIVA/__init__.py', 'w', encoding='utf-8') as f:
     f.write("__version__ = '0.0.1'\n\n")
     [f.write(f"class {c.title()}:\n    pass\n\n") for c in [' '.join(c).replace(' ', '_') for c in h1[1:5]]]
     [f.write(f"class {c.title()}:\n") for c in [''.join(c) for c in h1[5]]]
@@ -48,7 +48,7 @@ with open('pyIVA/__init__.py', 'w') as f:
     [f.write(f"class {c.title()}:\n") for c in [''.join(c) for c in h1[21]]]
     [f.write(f"    def {i.title().replace(' ', '_')}():\n        pass\n\n") for i in [' '.join(c) for c in h2[154:166]]]
     [f.write(f"class {c.title()}:\n") for c in ['_'.join(c) for c in h1[22:23]]]
-    [f.write(f"    def {i.title().replace(' ', '_')}():\n        pass\n\n") for i in [' '.join(c) for c in h2[166:169]]]   
+    [f.write(f"    def {i.title().replace(' ', '_')}():\n        pass\n\n") for i in [' '.join(c) for c in h2[166:169]]]
     [f.write(f"class {c.title()}:\n") for c in [''.join(c) for c in h1[23]]]
     [f.write(f"    def {i.title().replace(' ', '_').replace('-', '')}():\n        pass\n\n") for i in [' '.join(c) for c in h2[169:175]]]
     [f.write(f"class {c.title()}:\n") for c in ['_'.join(c) for c in h1[24:25]]]
@@ -64,7 +64,7 @@ with open('pyIVA/__init__.py', 'w') as f:
     [f.write(f"class {c.title()}:\n") for c in ['_'.join(c) for c in h1[29:30]]]
     [f.write(f"    def {i.title().replace(' ', '_')}():\n        pass\n\n") for i in [' '.join(c) for c in h2[187:188]]]
     [f.write(f"class {c.title()}:\n") for c in ['_'.join(c) for c in h1[30:31]]]
-    [f.write(f"    def {i.title().replace(' ', '_')}():\n        pass\n\n") for i in [' '.join(c) for c in h2[188:189]]]                 
+    [f.write(f"    def {i.title().replace(' ', '_')}():\n        pass\n") for i in [' '.join(c) for c in h2[188:189]]]
 
 # href = [str(i.get_attribute('href'))[39:] for i in driver.find_elements(By.TAG_NAME, "a")]
 # z = []
