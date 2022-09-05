@@ -4,8 +4,6 @@ from selenium.webdriver.common.by import By
 from tqdm import tqdm
 
 
-# driver = webdriver.Chrome(executable_path=r'C:\\Users\\nerv_\\Downloads\\chromedriver_win32\\chromedriver.exe')
-
 with webdriver.Chrome() as driver:
     driver.get('https://vcs.domrf.ru/doc/api/rest.html')
     # h1 = [c.text.split() for c in driver.find_elements(By.TAG_NAME, 'h1')]
